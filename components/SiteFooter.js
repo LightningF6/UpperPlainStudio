@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
@@ -10,11 +8,16 @@ export default function SiteFooter() {
         </p>
       </div>
       <div className="footer-links">
-        <a href="mailto:studio@upperplain.studio">studio@upperplain.studio</a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+        <a href="mailto:debra@upperplainstudio.com">
+          debra@upperplainstudio.com
+        </a>
+        <a
+          href="https://www.instagram.com/debra.lawson.artist/"
+          target="_blank"
+          rel="noreferrer"
+        >
           Instagram ↗
         </a>
-        <Link href="/contact">Enquiries</Link>
       </div>
       <p className="footer-legal">© 2026 Upper Plain Studio</p>
     </footer>

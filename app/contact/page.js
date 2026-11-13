@@ -21,8 +21,8 @@ export default function ContactPage() {
             For availability, commissions, or exhibition enquiries, write to the
             studio directly.
           </p>
-          <a className="contact-email" href="mailto:studio@upperplain.studio">
-            studio@upperplain.studio
+          <a className="contact-email" href="mailto:debra@upperplainstudio.com">
+            debra@upperplainstudio.com
           </a>
           <dl>
             <div>
@@ -37,7 +37,7 @@ export default function ContactPage() {
               <dt>Follow</dt>
               <dd>
                 <a
-                  href="https://www.instagram.com/"
+                  href="https://www.instagram.com/debra.lawson.artist/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -49,7 +49,7 @@ export default function ContactPage() {
         </div>
         <form
           className="contact-form"
-          action="mailto:studio@upperplain.studio"
+          action="mailto:debra@upperplainstudio.com"
           method="post"
           encType="text/plain"
         >
