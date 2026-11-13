@@ -29,11 +29,7 @@ export default async function GallerySectionPage({ params }) {
         <h1>{section.title}</h1>
         <p>{section.images.length} works</p>
       </div>
-      <div
-        className={`section-image-grid${
-          section.slug === "clipped" ? " section-image-grid-fill" : ""
-        }`}
-      >
+      <div className="section-image-grid">
         {section.images.map((image) => (
           <figure className="section-image" key={image.src}>
             <img src={image.src} alt={image.alt} loading="lazy" />
