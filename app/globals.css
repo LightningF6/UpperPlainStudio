@@ -10,7 +10,13 @@
   --name: var(--ink);
   --nav-selected: #f0c49a;
   --name-shadow:
-    4px 6px 6px rgba(62, 22, 4, 0.28), 12px 16px 18px rgba(92, 34, 6, 0.24);
+    6px 8px 6px rgba(62, 22, 4, 0.28),
+    16px 22px 18px rgba(62, 22, 4, 0.22),
+    28px 36px 28px rgba(62, 22, 4, 0.16);
+  --image-shadow:
+    -8px -8px 12px rgba(24, 72, 168, 0.28),
+    10px 12px 14px rgba(24, 72, 168, 0.4),
+    28px 32px 36px rgba(42, 108, 210, 0.42);
   --max-width: 1440px;
   --gutter: clamp(1.25rem, 3.4vw, 4.75rem);
 }
@@ -26,7 +32,13 @@ html[data-theme="dark"] {
   --name: var(--ink);
   --nav-selected: rgba(246, 199, 160, 0.24);
   --name-shadow:
-    4px 6px 8px rgba(0, 0, 0, 0.55), 12px 18px 22px rgba(0, 0, 0, 0.45);
+    6px 8px 8px rgba(246, 199, 160, 0.35),
+    16px 22px 18px rgba(180, 90, 40, 0.42),
+    28px 36px 28px rgba(92, 34, 6, 0.55);
+  --image-shadow:
+    -8px -8px 12px rgba(90, 150, 255, 0.38),
+    10px 12px 14px rgba(80, 140, 255, 0.48),
+    28px 32px 36px rgba(70, 130, 255, 0.42);
 }
 
 * {
@@ -229,9 +241,7 @@ textarea {
   height: auto;
   object-fit: contain;
   border-radius: 5px;
-  box-shadow:
-    10px 12px 14px rgba(24, 72, 168, 0.4),
-    28px 32px 36px rgba(42, 108, 210, 0.42);
+  box-shadow: var(--image-shadow);
 }
 .hero-name {
   margin: 0;
