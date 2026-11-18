@@ -3,7 +3,7 @@
 :root {
   --ink: #5c2206;
   --muted: var(--ink);
-  --paper: #fff4e8;
+  --paper: #fff0de;
   --paper-deep: #e8e3d8;
   --line: rgba(34, 37, 32, 0.18);
   --accent: #b45435;
@@ -745,7 +745,7 @@ dd {
 
 .site-footer {
   display: grid;
-  grid-template-columns: 1.3fr 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: 2rem;
   align-items: end;
   max-width: var(--max-width);
