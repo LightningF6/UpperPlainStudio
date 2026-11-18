@@ -8,7 +8,10 @@ export default function HomePage() {
             alt="Blue paint swatches and tubes on a studio bench."
           />
         </div>
-        <p className="hero-name">Debra Lawson</p>
+        <div className="hero-copy">
+          <p className="hero-name">debra lawson</p>
+          <p className="hero-role">artist</p>
+        </div>
       </div>
     </section>
   );
