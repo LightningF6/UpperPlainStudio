@@ -3,7 +3,7 @@
 :root {
   --ink: #333333;
   --muted: var(--ink);
-  --paper: #fff;
+  --paper: #8ce200;
   --paper-deep: #e8e3d8;
   --line: rgba(34, 37, 32, 0.18);
   --accent: #333333;
