@@ -1,13 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap");
 
 :root {
-  --ink: #5c2206;
+  --ink: #333333;
   --muted: var(--ink);
-  --paper: #fff0de;
+  --paper: #fff;
   --paper-deep: #e8e3d8;
   --line: rgba(34, 37, 32, 0.18);
-  --accent: #b45435;
+  --accent: #333333;
   --name: var(--ink);
+  --hero-text: var(--ink);
+  --chrome-text: var(--ink);
+  --header-title-size: min(4.225vh, 4.9vw);
+  --body-title-size: clamp(1.92rem, 9.6vw, 2.688rem);
+  --header-nav-size: clamp(0.96rem, 4.8vw, 1.344rem);
   --nav-selected: #f0c49a;
   --name-shadow:
     6px 8px 6px rgba(62, 22, 4, 0.28),
@@ -30,6 +35,8 @@ html[data-theme="dark"] {
   --line: rgba(244, 240, 230, 0.22);
   --accent: #f0b08a;
   --name: var(--ink);
+  --hero-text: #ff8a00;
+  --chrome-text: var(--hero-text);
   --nav-selected: rgba(246, 199, 160, 0.24);
   --name-shadow:
     6px 8px 8px rgba(246, 199, 160, 0.35),
@@ -48,12 +55,18 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   margin: 0;
   background: var(--paper);
   color: var(--ink);
   font-family: "Newsreader", Georgia, serif;
   font-size: 18px;
   line-height: 1.45;
+}
+#main-content {
+  flex: 1;
 }
 a {
   color: inherit;
@@ -93,6 +106,7 @@ textarea {
 
 .site-header {
   display: flex;
+  width: 100%;
   align-items: baseline;
   justify-content: space-between;
   gap: 2rem;
@@ -100,11 +114,11 @@ textarea {
   margin: 0 auto;
   padding: 2.2rem var(--gutter) 1.3rem;
   border-bottom: 1px solid var(--line);
-  color: var(--name);
+  color: var(--chrome-text);
 }
 .wordmark {
   font-family: "DM Mono", monospace;
-  font-size: 1.23rem;
+  font-size: var(--header-title-size);
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -113,9 +127,9 @@ textarea {
   display: flex;
   align-items: center;
   gap: clamp(1rem, 2.5vw, 2.8rem);
-  color: var(--ink);
+  color: var(--chrome-text);
   font-family: "DM Mono", monospace;
-  font-size: 0.68rem;
+  font-size: var(--header-nav-size);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -141,7 +155,7 @@ textarea {
 .site-nav a:visited,
 .footer-links a,
 .footer-links a:visited {
-  color: var(--ink);
+  color: var(--chrome-text);
   transition:
     color 0.2s ease,
     background 0.2s ease;
@@ -161,7 +175,7 @@ textarea {
   color: var(--accent);
 }
 .site-nav a[aria-current="page"]:hover {
-  color: var(--ink);
+  color: var(--chrome-text);
   background: var(--nav-selected);
 }
 .page-padding {
@@ -223,45 +237,54 @@ textarea {
 }
 .feature-stage {
   padding-top: clamp(2rem, 4vw, 3.5rem);
-  padding-bottom: clamp(5rem, 11vw, 10rem);
+  padding-bottom: 3rem;
 }
 .hero-split {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(16rem, 0.95fr);
-  gap: clamp(0.1875rem, 0.375vw, 0.375rem);
-  align-items: center;
+  grid-template-columns: max-content max-content;
+  gap: 3rem;
+  align-items: start;
 }
 .feature-image-link {
   display: block;
-  width: 51%;
-  justify-self: center;
+  width: fit-content;
+  justify-self: start;
+  margin-top: 2rem;
   border-radius: 5px;
 }
 .feature-image-link img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: 65vh;
   height: auto;
   object-fit: contain;
   border-radius: 5px;
 }
 .hero-name {
   margin: 0;
-  color: var(--name);
+  color: var(--hero-text);
   font-family: "DM Mono", monospace;
-  font-size: clamp(3.15rem, 5.4vw, 6.375rem);
+  font-size: var(--body-title-size);
   font-weight: 400;
   letter-spacing: -0.045em;
   line-height: 0.86;
+  text-transform: uppercase;
 }
 .hero-copy {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
   width: fit-content;
+  align-self: center;
+  margin-top: 2rem;
+  white-space: nowrap;
 }
 .hero-role {
-  margin: 1.25rem 0 0;
-  color: var(--ink);
+  margin: 0;
+  color: var(--hero-text);
   font-family: "DM Mono", monospace;
-  font-size: 1.36rem;
-  letter-spacing: 0.08em;
-  text-align: right;
+  font-size: var(--body-title-size);
+  letter-spacing: 0.03em;
 }
 /* .feature-image-link:hover img {
   transform: scale(1.015);
@@ -745,6 +768,7 @@ dd {
 
 .site-footer {
   display: grid;
+  width: 100%;
   grid-template-columns: 1fr auto;
   gap: 2rem;
   align-items: end;
@@ -752,11 +776,11 @@ dd {
   margin: 0 auto;
   padding: 2rem var(--gutter) 3rem;
   border-top: 1px solid var(--line);
-  color: var(--ink);
+  color: var(--chrome-text);
 }
 .footer-kicker {
   margin: 0;
-  color: var(--ink);
+  color: var(--chrome-text);
   font-family: "DM Mono", monospace;
   font-size: 0.65rem;
   letter-spacing: 0.06em;
@@ -765,7 +789,7 @@ dd {
 .footer-note {
   max-width: 15rem;
   margin: 0.6rem 0 0;
-  color: var(--ink);
+  color: var(--chrome-text);
   font-size: 0.9rem;
 }
 .footer-links {
@@ -778,7 +802,7 @@ dd {
 }
 .footer-legal {
   margin: 0;
-  color: var(--ink);
+  color: var(--chrome-text);
   font-family: "DM Mono", monospace;
   font-size: 0.58rem;
   text-align: right;
@@ -799,7 +823,6 @@ dd {
     width: 100%;
     justify-content: space-between;
     gap: 0.5rem;
-    font-size: 0.58rem;
   }
   .home-intro {
     display: block;
@@ -819,13 +842,10 @@ dd {
   }
   .hero-split {
     grid-template-columns: 1fr;
-    gap: 0.25rem;
+    gap: 0.0625rem;
   }
   .feature-image-link {
-    justify-self: start;
-  }
-  .hero-name {
-    font-size: clamp(2.55rem, 12vw, 4.125rem);
+    width: 63.75%;
   }
   .feature-meta {
     display: block;
@@ -915,7 +935,62 @@ dd {
   }
   .footer-legal {
     grid-column: 1 / -1;
-    text-align: left;
+    text-align: right;
+  }
+}
+
+@media (max-height: 1000px) {
+  :root {
+    --body-title-size: clamp(1.56rem, 6vw, 2.16rem);
+    --header-nav-size: clamp(0.78rem, 3vw, 1.08rem);
+  }
+  .site-header {
+    gap: 0.25rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .site-nav {
+    gap: 0.35rem;
+  }
+  .feature-stage {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .hero-split {
+    grid-template-columns: max-content max-content;
+    gap: 3rem;
+  }
+  .feature-image-link {
+    width: fit-content;
+  }
+  .feature-image-link img {
+    width: auto;
+    max-height: 65vh;
+  }
+  .site-footer {
+    gap: 0.5rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .footer-links,
+  .footer-legal {
+    font-size: 0.52rem;
+  }
+  .footer-links {
+    gap: 0.2rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+  .hero-copy {
+    margin-top: 0;
+  }
+  .feature-image-link {
+    max-width: 100%;
   }
 }
 

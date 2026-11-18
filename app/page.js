@@ -9,8 +9,8 @@ export default function HomePage() {
           />
         </div>
         <div className="hero-copy">
-          <p className="hero-name">debra lawson</p>
-          <p className="hero-role">artist</p>
+          <p className="hero-name">Debra Lawson -</p>
+          <p className="hero-role">Artist</p>
         </div>
       </div>
     </section>
